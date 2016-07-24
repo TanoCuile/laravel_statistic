@@ -15,9 +15,16 @@ Route::group(['middleware' => 'statistic'], function(){
     Route::get('/', function () {
         return view('welcome');
     });
-
-    Route::get('/page/1', [
-        '' => '',
-        'uses' => 'PagesController@firstPage'
-    ]);
+    Route::get('/page/1', 'PagesController@firstPage');
 });
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/admin', 'AdminController@index');
+});
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

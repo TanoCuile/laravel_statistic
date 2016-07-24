@@ -42,8 +42,9 @@
             <?php print $title;?>
         </div>
         <div class="body">
-            <?php print $content;?>
+            <?php print $body;?>
         </div>
+        <a href="/">Home</a>
     </div>
 </div>
 </body>
